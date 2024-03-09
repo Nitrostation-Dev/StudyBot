@@ -9,10 +9,7 @@ dotenv.config();
         intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent],
     };
     const BOT = new StudyBotClient(options);
-
     BOT.logger.info("Successfully Created Client");
-    BOT.logger.warn("Logging in Bot");
 
-    await BOT.login(process.env.TOKEN);
-    BOT.logger.info("Successfully Logged in: " + BOT.user?.tag);
+    await BOT.login_bot(process.env.TOKEN);
 })();
